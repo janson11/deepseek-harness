@@ -1,0 +1,2 @@
+#- name: './hello.ts'
+- name: './lifecycle.ts'
