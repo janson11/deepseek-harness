@@ -3,5 +3,6 @@
 # - name: "./greeter.ts"
 # - name: "./consumer.ts"
 
-- name: "./stats.ts"
-- name: "./reporter.ts"
+# - name: "./stats.ts"
+# - name: "./reporter.ts"
+- name: "./waterfall-demo.ts"
