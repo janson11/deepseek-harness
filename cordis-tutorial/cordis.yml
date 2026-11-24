@@ -5,4 +5,9 @@
 
 # - name: "./stats.ts"
 # - name: "./reporter.ts"
-- name: "./waterfall-demo.ts"
+# - name: "./waterfall-demo.ts"
+- name: "./config-demo.ts"
+  config:
+    greeting: !!js process.env.DEMO_GREETING ?? 'Hello'
+    # targets: ["alpha", "beta"]
+    # targets: "not-an-array"
