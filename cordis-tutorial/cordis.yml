@@ -1,2 +1,7 @@
 #- name: './hello.ts'
-- name: './lifecycle.ts'
+# - name: './lifecycle.ts'
+# - name: "./greeter.ts"
+# - name: "./consumer.ts"
+
+- name: "./stats.ts"
+- name: "./reporter.ts"
