@@ -6,8 +6,22 @@
 # - name: "./stats.ts"
 # - name: "./reporter.ts"
 # - name: "./waterfall-demo.ts"
-- name: "./config-demo.ts"
-  config:
-    greeting: !!js process.env.DEMO_GREETING ?? 'Hello'
-    # targets: ["alpha", "beta"]
-    # targets: "not-an-array"
+# - name: "./config-demo.ts"
+# config:
+# greeting: !!js process.env.DEMO_GREETING ?? 'Hello'
+# targets: ["alpha", "beta"]
+# targets: "not-an-array"
+
+# - id: logger
+#   name: "@deepseek-ai/cordis-plugin-logger-console"
+# - id: time
+#   name: "@deepseek-ai/cordis-plugin-timer"
+# - id: hmr
+#   name: "@deepseek-ai/dsh-hmr"
+#   config:
+#     root: ["."]
+# - id: hello
+#   name: "./hello.ts"
+
+- name: "./needs-timer.ts"
+- name: "./diagnose.ts"
