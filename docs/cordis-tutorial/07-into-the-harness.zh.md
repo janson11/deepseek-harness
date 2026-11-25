@@ -78,11 +78,12 @@ export function apply(ctx: Context) {
 ```yaml
 - name: '@deepseek-ai/dsh-system-prompt'
 - name: '@deepseek-ai/dsh-tools'
+- name: '@deepseek-ai/dsh-tool-executor-native'
 - name: './tool-logger.ts'
 - name: './greet-tool.ts'
 ```
 
-`@deepseek-ai/dsh-tools` 会注入 `systemPrompt` 服务，因为工具需要向系统提示词贡献 schema，所以组合中也要列出该服务的提供方。缺少提供方时，工具插件会像[第 6 章](06-composition-and-hmr.zh.md)所述那样保持 PENDING。
+`@deepseek-ai/dsh-tools` 会注入 `systemPrompt` 服务，因为工具需要向系统提示词贡献 schema，所以组合中也要列出该服务的提供方。缺少提供方时，工具插件会像[第 6 章](06-composition-and-hmr.zh.md)所述那样保持 PENDING。原生执行器会运行已注册的工具；缺少执行器时，`ctx.tools.execute()` 会以 `TOOL_EXECUTOR_UNAVAILABLE` 拒绝。
 
 ```sh
 node --import tsx ../../vendor/cordis/bin.js

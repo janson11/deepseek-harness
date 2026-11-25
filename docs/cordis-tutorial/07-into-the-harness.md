@@ -78,11 +78,12 @@ The `import type {} from '@deepseek-ai/dsh-tools'` line pulls in the package's d
 ```yaml
 - name: '@deepseek-ai/dsh-system-prompt'
 - name: '@deepseek-ai/dsh-tools'
+- name: '@deepseek-ai/dsh-tool-executor-native'
 - name: './tool-logger.ts'
 - name: './greet-tool.ts'
 ```
 
-`@deepseek-ai/dsh-tools` injects the `systemPrompt` service because tools contribute schemas to the system prompt, so the composition lists its provider too. Without it, the tools plugin remains PENDING as described in [chapter 6](06-composition-and-hmr.md).
+`@deepseek-ai/dsh-tools` injects the `systemPrompt` service because tools contribute schemas to the system prompt, so the composition lists its provider too. Without it, the tools plugin remains PENDING as described in [chapter 6](06-composition-and-hmr.md). The native executor runs the registered tool; without an executor, `ctx.tools.execute()` rejects with `TOOL_EXECUTOR_UNAVAILABLE`.
 
 ```sh
 node --import tsx ../../vendor/cordis/bin.js
